@@ -19,10 +19,9 @@ module tb_fetch;
         $dumpfile("fetch.vcd");
         $dumpvars(0, tb_fetch);
         #20 rst = 0;
-        #120 $finish;
+        #170 $finish; // 10 ns per fetched instruction
     end
 
     always @(posedge clk) if (valid)
         $display("Fetched: %02x (PC=%d)", instr, pc);
 endmodule
-
